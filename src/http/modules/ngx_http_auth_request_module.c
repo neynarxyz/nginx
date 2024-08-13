@@ -138,6 +138,10 @@ ngx_http_auth_request_handler(ngx_http_request_t *r)
             return ctx->status;
         }
 
+        if (ctx->status == NGX_HTTP_TOO_MANY_REQUESTS) {
+            return ctx->status;
+        }
+
         if (ctx->status == NGX_HTTP_UNAUTHORIZED) {
             sr = ctx->subrequest;
 
