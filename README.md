@@ -1,0 +1,1 @@
+This is a patched version of nginx that supports rate limit http codes on the auth endpoints. [The patch](https://github.com/neynarxyz/nginx/commit/32b1455fca96ec77039e42a49e6af3e8d30f84ba) is very small. We use this in the monorepo as a revese proxy for customer Snapchain access.
