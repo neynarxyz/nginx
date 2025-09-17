@@ -3,7 +3,7 @@
 # If 'push' is true, image will be pushed to ECR.
 set -eu -o pipefail
 
-VERSION="${1:-1.29.1}" # Version tag for the image, e.g., "1.29.1". Should match the nginx image version in the Dockerfile.
+VERSION="${1:-1.26.1}" # Version tag for the image, e.g., "1.26.1". Should match the nginx image version in the Dockerfile and the version of the forked code in this repo.
 PUSH="${2:-true}"
 
 echo "Using version tag: '$VERSION'"

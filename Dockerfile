@@ -1,4 +1,4 @@
-FROM nginx:1.29.1
+FROM nginx:1.26.1
 
 # we are going to replace the packaged nginx with our own build
 RUN apt-get --yes remove nginx
