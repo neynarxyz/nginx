@@ -56,7 +56,11 @@ RUN { set -eux; \
     --with-cc-opt='-g -O2 -ffile-prefix-map=/opt/src/nginx=. -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' \
     --with-ld-opt='-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie'; \
     make install; \
-    mkdir -p /var/cache/nginx; \
-    chown -R nginx: /var/cache/nginx; \
     rm -r /opt/src/nginx; \
     }
+
+RUN mkdir -p /var/cache/nginx /etc/nginx /var/log/nginx && \
+    touch /var/run/nginx.pid /var/run/nginx.lock && \
+    chown -R nginx:nginx /var/cache/nginx /etc/nginx /var/log/nginx /var/run/nginx.pid /var/run/nginx.lock
+
+USER nginx
